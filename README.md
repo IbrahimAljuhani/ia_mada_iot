@@ -24,11 +24,11 @@ Supports **unlimited Mada terminals** — create one payment method per device, 
 | Component | Details |
 |-----------|---------|
 | Odoo | 18.0 Enterprise |
-| Raspberry Pi | 3B+ or 4 recommended (Zero W for testing only) |
+| Raspberry Pi | **3B, 3B+ or 4 |
 | IoT Box image | `iotbox-latest.zip` from nightly.odoo.com |
 | NeoLeap Mada | Installed and running on each payment device |
 | Network | All devices on the same WiFi/LAN |
-| Python library | `websocket-client` installed on Pi |
+| Python library | `websocket-client` installed on Pi 
 
 ---
 
