@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pos_payment_method_form_mada" model="ir.ui.view">
+        <field name="name">pos.payment.method.form.mada</field>
+        <field name="model">pos.payment.method</field>
+        <field name="inherit_id" ref="point_of_sale.pos_payment_method_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Always show the terminal selection field -->
+            <field name="use_payment_terminal" position="attributes">
+                <attribute name="invisible">0</attribute>
+            </field>
+            <!-- Add NeoLeap IP field and Test button after terminal selection -->
+            <field name="use_payment_terminal" position="after">
+                <field name="neoleap_ip"
+                       string="NeoLeap IP Address"
+                       placeholder="e.g. 192.168.1.10"
+                       invisible="use_payment_terminal != 'mada_iot'"/>
+                <button string="Test Connection"
+                        name="action_test_neoleap_connection"
+                        type="object"
+                        class="btn-secondary"
+                        invisible="use_payment_terminal != 'mada_iot' or not neoleap_ip"/>
+            </field>
+        </field>
+    </record>
+</odoo>
